@@ -1,0 +1,333 @@
+@import "tailwindcss";
+
+/* ------------------------------
+   GLOBAL
+------------------------------ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #F1F6F4;
+  color: #172B36;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  display: block;
+  max-width: 100%;
+}
+
+/* ------------------------------
+   TYPOGRAPHY
+------------------------------ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: -1px;
+}
+
+p,
+button,
+a,
+li,
+input,
+textarea,
+select,
+span {
+  font-family: "Inter", sans-serif;
+}
+
+/* ------------------------------
+   SECTIONS
+------------------------------ */
+
+section {
+  position: relative;
+}
+
+/* ------------------------------
+   PREMIUM CARD
+------------------------------ */
+
+.card {
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(18px);
+  border: 1px solid #D9E8E2;
+  border-radius: 32px;
+  transition: all .45s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,.05);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: #FFC801;
+  box-shadow: 0 20px 45px rgba(0,0,0,.12);
+}
+
+/* ------------------------------
+   GLOW
+------------------------------ */
+
+.glow {
+  box-shadow:
+    0 0 40px rgba(255,200,1,.18),
+    0 0 80px rgba(255,200,1,.08);
+}
+
+/* ------------------------------
+   BUTTONS
+------------------------------ */
+
+.btn-primary {
+  transition: .35s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  transition: .35s;
+}
+
+.btn-secondary:hover {
+  transform: scale(1.05);
+}
+
+/* ------------------------------
+   ICONS
+------------------------------ */
+
+.icon-hover {
+  transition: .35s;
+}
+
+.icon-hover:hover {
+  transform: scale(1.15) rotate(8deg);
+}
+
+/* ------------------------------
+   LINKS
+------------------------------ */
+
+a {
+  text-decoration: none;
+  transition: .3s;
+}
+
+a:hover {
+  color: #114C5A;
+}
+
+/* ------------------------------
+   SCROLLBAR
+------------------------------ */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F6F4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #114C5A;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC801;
+}
+
+/* ------------------------------
+   ANIMATIONS
+------------------------------ */
+
+.fade-up {
+  animation: fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+.rotate-slow {
+  animation: rotateSlow 18s linear infinite;
+}
+
+@keyframes rotateSlow {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+.pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseSlow {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+.slide-up {
+  animation: slideUp .6s ease;
+}
+
+@keyframes slideUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/* ------------------------------
+   GLASS EFFECT
+------------------------------ */
+
+.glass {
+  background: rgba(255,255,255,.70);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(17,76,90,.08);
+}
+
+/* ------------------------------
+   HERO BACKGROUND
+------------------------------ */
+
+.hero-gradient {
+  background:
+    radial-gradient(circle at top left,
+      rgba(255,200,1,.18),
+      transparent 40%),
+    radial-gradient(circle at bottom right,
+      rgba(17,76,90,.12),
+      transparent 35%),
+    #F1F6F4;
+}
+
+/* ------------------------------
+   ANIMATED BACKGROUND
+------------------------------ */
+
+body::before{
+  content:"";
+  position:fixed;
+  width:550px;
+  height:550px;
+  left:-180px;
+  top:-150px;
+  border-radius:50%;
+  background:rgba(255,200,1,.18);
+  filter:blur(120px);
+  animation:blobOne 18s ease-in-out infinite alternate;
+  z-index:-2;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  width:650px;
+  height:650px;
+  right:-220px;
+  bottom:-180px;
+  border-radius:50%;
+  background:rgba(17,76,90,.10);
+  filter:blur(140px);
+  animation:blobTwo 22s ease-in-out infinite alternate;
+  z-index:-2;
+}
+
+@keyframes blobOne{
+
+  from{
+    transform:translate(0,0) scale(1);
+  }
+
+  to{
+    transform:translate(120px,80px) scale(1.2);
+  }
+
+}
+
+@keyframes blobTwo{
+
+  from{
+    transform:translate(0,0) scale(1);
+  }
+
+  to{
+    transform:translate(-120px,-90px) scale(1.25);
+  }
+
+}
